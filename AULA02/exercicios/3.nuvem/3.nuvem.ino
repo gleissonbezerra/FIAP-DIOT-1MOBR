@@ -4,9 +4,11 @@
  *************************************************************/
 // Template ID, Device Name and Auth Token are provided by the Blynk.Cloud
 // See the Device Info tab, or Template settings
-#define BLYNK_TEMPLATE_ID           "TMPLxxxxxx"
-#define BLYNK_DEVICE_NAME           "Device"
-#define BLYNK_AUTH_TOKEN            "YourAuthToken"
+#define BLYNK_TEMPLATE_ID "TMPL22VLXdRl1"
+#define BLYNK_TEMPLATE_NAME "Quickstart Template"
+#define BLYNK_AUTH_TOKEN "nrCmd8rcxA3w71P1ntZYTAXjhgyu70zk"
+
+#define LED 8
 
 // Comment this out to disable prints and save space
 #define BLYNK_PRINT Serial
@@ -35,6 +37,12 @@ BLYNK_WRITE(V0)
 {
   // Set incoming value from pin V0 to a variable
   int value = param.asInt();
+
+  if ( value > 0){
+    digitalWrite(LED, HIGH);
+  }else{
+    digitalWrite(LED, LOW);
+  }
 
   Serial.println(value);
 
@@ -75,6 +83,8 @@ void setup()
 
   // Setup a function to be called every second
   timer.setInterval(1000L, myTimerEvent);
+
+  pinMode(LED, OUTPUT);
 
 }
 

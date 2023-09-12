@@ -29,8 +29,8 @@ ported for sparkfun esp32
 
 #define LED 2
 
-const char* ssid     = "";
-const char* password = "";
+const char* ssid     = "GNET 2.4";
+const char* password = "F23700623D8D24";
 
 WiFiServer server(80);
 
