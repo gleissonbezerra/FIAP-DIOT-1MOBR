@@ -1,0 +1,12 @@
+FROM gleissonbezerra/arm32v7-opencv451-python:3.9
+
+WORKDIR /app
+
+COPY requirements.txt ./
+RUN pip install -r requirements.txt
+
+COPY . .
+
+EXPOSE 8080
+
+CMD [ "python3", "-u", "./main.py" ]

@@ -16,7 +16,7 @@ while True:
         continue
 
     # Manipulação da imagem
-    #frame = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    frame = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
 
     # display do resultado
     cv.imshow('frame', frame)
